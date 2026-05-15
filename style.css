@@ -1,0 +1,203 @@
+/* --- نمط جبال الأطلس الزجاجي والزليج المغربي (Atlas Zellij Glassmorphism) --- */
+
+body {
+    font-family          : 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+    /* 1. تركيب صورة الخلفية (الزليج المغربي) */
+    background-image     : url('background.png');
+    background-size      : cover;
+    background-position  : center;
+    background-attachment: fixed;
+    /* الخلفية ثابتة عند التمرير */
+    background-repeat    : no-repeat;
+
+    /* ألوان بنفسجية احتياطية */
+    background-color: #2e1a47;
+
+    display        : flex;
+    justify-content: center;
+    align-items    : center;
+    /* توسيط عمودي كامل */
+    min-height     : 100vh;
+    margin         : 0;
+    overflow-x     : hidden;
+}
+
+/* --- صندوق الزجاج الضبابي (The Glass Card) --- */
+.container {
+    /* 2. تأثير الزجاج (شفافية بيضاء ناعمة) */
+    background: rgba(255, 255, 255, 0.45);
+
+    /* 3. تأثير الضبابية خلف الزجاج (الأهم) */
+    backdrop-filter        : blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    /* لدعم متصفحات سيلفاري وإيدج القديمة */
+
+    padding      : 50px;
+    border-radius: 30px;
+    /* زوايا دائرية ناعمة جداً */
+
+    /* 4. حافة زجاجية لامعة وخفيفة */
+    border: 1px solid rgba(255, 255, 255, 0.25);
+
+    /* 5. ظل ناعم وعميق يعطي إحساساً بالطفو */
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
+
+    width     : 680px;
+    text-align: center;
+    transition: transform 0.3s ease;
+}
+
+.container:hover {
+    transform: translateY(-5px);
+    /* حركة خفيفة عند تمرير الفأرة */
+}
+
+/* --- الشعار النجمي والاسم الاحترافي --- */
+h1 {
+    font-size      : 2.6rem;
+    /* لون ذهبي دافئ مستوحى من الزليج */
+    color          : #C5A059;
+    font-weight    : 700;
+    margin-bottom  : 10px;
+    display        : flex;
+    align-items    : center;
+    justify-content: center;
+    text-shadow    : 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.moroccan-icon {
+    font-size   : 3.2rem;
+    margin-right: 15px;
+    /* لون بنفسجي عميق للشعار */
+    color       : #4B0082;
+}
+
+p {
+    /* لون بنفسجي رمادي ناعم للقراءة */
+    color        : #5d4e77;
+    font-size    : 16px;
+    margin-bottom: 30px;
+    font-weight  : 500;
+}
+
+/* --- صندوق مدخلات الكود الزجاجي --- */
+textarea {
+    width  : 100%;
+    height : 190px;
+    padding: 20px;
+
+    /* زجاج داخلي داكن قليلاً ومريح للكتابة */
+    background: rgba(255, 255, 255, 0.6);
+
+    border       : 2px solid rgba(75, 0, 130, 0.15);
+    /* حافة بنفسجية خفيفة */
+    border-radius: 15px;
+
+    /* لون الكتابة بنفسجي غامق */
+    color: #2e1a47;
+
+    font-family: 'Consolas', 'Courier New', monospace;
+    font-size  : 15px;
+    box-sizing : border-box;
+    transition : all 0.3s ease;
+}
+
+textarea:focus {
+    outline     : none;
+    border-color: #C5A059;
+    /* يتحول للذهبي عند التركيز */
+    background  : rgba(255, 255, 255, 0.9);
+    box-shadow  : 0 0 15px rgba(197, 160, 89, 0.2);
+}
+
+textarea::placeholder {
+    color: #a094b7;
+}
+
+/* --- زر التفعيل بالتدريج اللوني (البنفسجي إلى الذهبي) --- */
+button {
+    /* تدريج لوني مستوحى من الجبال والزليج */
+    background: linear-gradient(135deg, #4B0082, #C5A059);
+
+    color         : #ffffff;
+    font-size     : 18px;
+    font-weight   : bold;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    border        : none;
+    padding       : 16px 25px;
+    margin-top    : 30px;
+    border-radius : 15px;
+    cursor        : pointer;
+    width         : 100%;
+    transition    : all 0.3s ease;
+    box-shadow    : 0 5px 15px rgba(75, 0, 130, 0.3);
+}
+
+button:hover {
+    background: linear-gradient(135deg, #C5A059, #4B0082);
+    /* قلب التدريج */
+    transform : translateY(-2px);
+    box-shadow: 0 8px 20px rgba(197, 160, 89, 0.4);
+}
+
+button:active {
+    transform: translateY(1px);
+}
+
+/* --- صندوق عرض مخرجات الشرح الزجاجي الناعم --- */
+.result-box {
+    margin-top: 35px;
+    padding   : 25px;
+
+    /* زجاج فاتح جداً وناعم */
+    background: rgba(255, 255, 255, 0.7);
+
+    /* لمسة جمالية جانبية باللون البنفسجي الداكن */
+    border-left  : 5px solid #4B0082;
+    border-radius: 12px;
+
+    /* لون كتابة بنفسجي عميق ومريح */
+    color: #2e1a47;
+
+    text-align : left;
+    min-height : 100px;
+    font-family: system-ui, -apple-system, sans-serif;
+    line-height: 1.8;
+    font-size  : 15px;
+    font-weight: 500;
+    white-space: pre-wrap;
+    box-shadow : 0 5px 15px rgba(0, 0, 0, 0.05);
+}
+
+.logo-container {
+    display        : flex;
+    align-items    : center;
+    justify-content: center;
+    gap            : 18px;
+    margin-bottom  : 25px;
+    flex-wrap      : wrap;
+    text-align     : left;
+}
+
+.logo {
+    width     : 90px;
+    height    : 90px;
+    object-fit: contain;
+    filter    : drop-shadow(0 0 12px rgba(138, 43, 226, 0.4));
+    transition: 0.3s ease;
+}
+
+.logo:hover {
+    transform: scale(1.05) rotate(3deg);
+}
+
+.logo-container h1 {
+    margin: 0;
+}
+
+.subtitle {
+    margin-top: 8px;
+    color     : #6b5b95;
+    font-size : 16px;
+}
